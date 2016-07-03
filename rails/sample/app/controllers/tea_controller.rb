@@ -4,13 +4,14 @@ class TeaController < ApplicationController
   end
 
   def get
-    tea_list = {
+    teas = {
         1=>'orange tea',
         2=>'apple tea',
         3=>'japanese tea',
     }
     tea_id = params['id'].to_i
     @tea_id = tea_id
-    @tea_name = tea_list[tea_id]
+    @tea_name = teas[tea_id]
+    @tea_list = teas.values
   end
 end
